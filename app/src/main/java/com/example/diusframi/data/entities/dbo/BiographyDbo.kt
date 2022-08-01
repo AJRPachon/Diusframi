@@ -8,12 +8,12 @@ import androidx.room.PrimaryKey
 data class BiographyDbo(
 
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @Nullable val herollainId: Int, //There could be a biography withouth a herollain
-    @Nullable val fullName: String,
-    @Nullable val alterEgos: String,
-   // @Nullable val aliases: List<String>, //TODO Arreglar esta parte en Room
-    @Nullable val placeOfBirth: String,
-    @Nullable val firstAppearance: String,
-    @Nullable val publisher: String,
-    @Nullable val alignment: String
+    @Nullable val herollainId: Int?, //There could be a biography withouth a herollain
+    @Nullable val fullName: String?,
+    @Nullable val alterEgos: String?,
+   // @Nullable val aliases: List<String>?, //TODO Arreglar esta parte en Room
+    @Nullable val placeOfBirth: String?,
+    @Nullable val firstAppearance: String?,
+    @Nullable val publisher: String?,
+    @Nullable val alignment: String?
 )

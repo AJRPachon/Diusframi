@@ -8,11 +8,11 @@ import androidx.room.PrimaryKey
 data class AppearanceDbo(
 
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @Nullable val herollainId: Int, //There could be an appearance withouth a herollain
-    @Nullable val gender: String,
-    @Nullable val race: String,
-    //@Nullable val height: List<String>,
-    //@Nullable val weight: List<String>,
-    @Nullable val eyeColor: String,
-    @Nullable val hairColor: String
+    @Nullable val herollainId: Int?, //There could be an appearance withouth a herollain
+    @Nullable val gender: String?,
+    @Nullable val race: String?,
+    //@Nullable val height: List<String>?,
+    //@Nullable val weight: List<String>?,
+    @Nullable val eyeColor: String?,
+    @Nullable val hairColor: String?
 )

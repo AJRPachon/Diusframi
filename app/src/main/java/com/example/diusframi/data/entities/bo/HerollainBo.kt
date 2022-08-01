@@ -4,7 +4,7 @@ data class HerollainBo (
 
     val id : Int?,
     val name: String?,
-    val urls: ImageBo?,
+    val images: ImageBo?,
     val powerstats: PowerStatBo?,
     val appearances: AppearanceBo?,
     val biography: BiographyBo?,

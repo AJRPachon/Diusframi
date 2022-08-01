@@ -51,6 +51,7 @@ class HomeFragment : Fragment() {
 
     private fun onHerollainsLoaded(herollainsList : List<HerollainBo>){
         herollainsAdapter.submitList(herollainsList)
+        herollainViewModel.insertHerollainListOnBBDD()
     }
 
 }

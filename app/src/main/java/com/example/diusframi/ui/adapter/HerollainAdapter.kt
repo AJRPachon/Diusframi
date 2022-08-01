@@ -38,7 +38,7 @@ class HerollainAdapter : ListAdapter<HerollainBo, HerollainAdapter.HerollainView
                 binding.homeRowLblHerollainCombatValue.text = herollainBo.powerstats?.combat?.toString() ?: ""
 
                 Glide.with(itemView.context)
-                    .load(herollainBo.urls?.lg)
+                    .load(herollainBo.images?.lg)
                     .error(R.drawable.ic_launcher_background)
                     .into(binding.homeRowImgHerollainProfilePic)
 

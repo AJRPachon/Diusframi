@@ -7,7 +7,6 @@ data class HerollainDto(
 
     @SerializedName("id") val id : Int?,
     @SerializedName("name") val name : String?,
-    @SerializedName("slug") val slug : String?,
     @SerializedName("powerstats") val powerStats : PowerStatsDto?,
     @SerializedName("appearance") val appearance : AppearanceDto?,
     @SerializedName("biography") val biography : BiographyDto?,

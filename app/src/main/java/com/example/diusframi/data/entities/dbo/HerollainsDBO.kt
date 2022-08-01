@@ -7,8 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "herollain")
 data class HerollainDbo(
 
-    @PrimaryKey(autoGenerate = true) val id: Int,
-    @Nullable val name: String,
-    @Nullable val powerstats: String,
-    @Nullable val isFavorite: Boolean
+    @PrimaryKey val id: Int?,
+    @Nullable val name: String?,
+    @Nullable val isFavorite: Boolean?
 )

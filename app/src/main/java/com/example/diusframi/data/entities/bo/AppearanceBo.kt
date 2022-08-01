@@ -7,5 +7,5 @@ data class AppearanceBo(
     val height : List<String>?,
     val weight : List<String>?,
     val eyeColor : String?,
-    val cohairColormbat : String?
+    val hairColor : String?
 )
