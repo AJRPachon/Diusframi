@@ -2,7 +2,7 @@ package com.example.diusframi.data.entities.bo
 
 data class PowerStatBo(
 
-    val intelligence: Int,
+    val intelligence: Int?,
     val strength: Int?,
     val speed: Int?,
     val durability: Int?,

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.diusframi.data.entities.bo.HerollainBo
 import com.example.diusframi.data.local.repository.HerollainLocalRepository
+import com.example.diusframi.data.remote.repository.HerollainRemoteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -18,8 +19,20 @@ class HerollainViewModel : ViewModel(){
     }
 
     fun requestHerollainList() {
+
+        requestHerollainListApi()
+
+//        viewModelScope.launch(Dispatchers.IO) {
+//            herollainListLiveData.postValue(HerollainLocalRepository.getHerollainList())
+//        }
+    }
+
+
+    ///// API ////////////////////////////////////////////////////////////////////////////////////
+    private fun requestHerollainListApi() {
         viewModelScope.launch(Dispatchers.IO) {
-            herollainListLiveData.postValue(HerollainLocalRepository.getHerollainList())
+            herollainListLiveData.postValue(HerollainRemoteRepository.getHerollainList())
         }
     }
+
 }

@@ -9,5 +9,5 @@ data class AppearanceDto(
     @SerializedName("height") val height : List<String>?,
     @SerializedName("weight") val weight : List<String>?,
     @SerializedName("eyeColor") val eyeColor : String?,
-    @SerializedName("hairColor") val cohairColormbat : String?
+    @SerializedName("hairColor") val hairColor : String?
 )
