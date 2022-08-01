@@ -11,8 +11,8 @@ data class AppearanceDbo(
     @Nullable val herollainId: Int?, //There could be an appearance withouth a herollain
     @Nullable val gender: String?,
     @Nullable val race: String?,
-    //@Nullable val height: List<String>?,
-    //@Nullable val weight: List<String>?,
+    @Nullable val height: String?,
+    @Nullable val weight: String?,
     @Nullable val eyeColor: String?,
     @Nullable val hairColor: String?
 )
