@@ -11,7 +11,7 @@ data class BiographyDbo(
     @Nullable val herollainId: Int, //There could be a biography withouth a herollain
     @Nullable val fullName: String,
     @Nullable val alterEgos: String,
-    @Nullable val aliases: List<String>,
+   // @Nullable val aliases: List<String>, //TODO Arreglar esta parte en Room
     @Nullable val placeOfBirth: String,
     @Nullable val firstAppearance: String,
     @Nullable val publisher: String,

@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey
 data class HerollainsDbo(
 
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @Nullable val url: String,
     @Nullable val name: String,
     @Nullable val powerstats: String,
     @Nullable val isFavorite: Boolean
