@@ -3,14 +3,14 @@ package com.example.diusframi.data.entities.dbo.relations
 import androidx.room.Embedded
 import androidx.room.Relation
 import com.example.diusframi.data.entities.dbo.BiographyDbo
-import com.example.diusframi.data.entities.dbo.HerollainsDbo
+import com.example.diusframi.data.entities.dbo.HerollainDbo
 
 data class HerollainWithBiography(
 
-    @Embedded val herollain: HerollainsDbo,
+    @Embedded val herollain: HerollainDbo,
     @Relation(
         parentColumn = "id",
-        entityColumn = "herollainId"
+        entityColumn = "herollainId",
     )
     val biographies: List<BiographyDbo>
 )
