@@ -13,28 +13,28 @@ data class HerollainWithData (
     @Relation(
         parentColumn = "id",
         entityColumn = "herollainId",
-        associateBy = Junction(AppearanceDbo::class, parentColumn = "id", entityColumn = "herrollainId" )
+        associateBy = Junction(AppearanceDbo::class, parentColumn = "id", entityColumn = "herollainId" )
     )
     val appearances: AppearanceDbo,
 
     @Relation(
         parentColumn = "id",
         entityColumn = "herollainId",
-        associateBy = Junction(BiographyDbo::class, parentColumn = "id", entityColumn = "herrollainId" )
+        associateBy = Junction(BiographyDbo::class, parentColumn = "id", entityColumn = "herollainId" )
     )
     val biography: BiographyDbo,
 
     @Relation(
         parentColumn = "id",
         entityColumn = "herollainId",
-        associateBy = Junction(PowerStatsDbo::class, parentColumn = "id", entityColumn = "herrollainId" )
+        associateBy = Junction(PowerStatsDbo::class, parentColumn = "id", entityColumn = "herollainId" )
     )
     val powerStats: PowerStatsDbo,
 
     @Relation(
         parentColumn = "id",
         entityColumn = "herollainId",
-        associateBy = Junction(ImageDbo::class, parentColumn = "id", entityColumn = "herrollainId" )
+        associateBy = Junction(ImageDbo::class, parentColumn = "id", entityColumn = "herollainId" )
     )
     val images: ImageDbo
 
