@@ -5,14 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.diusframi.data.entities.bo.HerollainBo
 import com.example.diusframi.databinding.FragmentHomeBinding
-import com.example.diusframi.ui.adapter.HerollainsAdapter
+import com.example.diusframi.ui.adapter.HerollainAdapter
+import com.example.diusframi.ui.viewmodel.HerollainViewModel
 
 class HomeFragment : Fragment() {
 
+    private val herollainViewModel : HerollainViewModel by viewModels()
     private val herollainsAdapter by lazy {
-        HerollainsAdapter()
+        HerollainAdapter()
     }
 
     private var binding : FragmentHomeBinding? = null
@@ -41,8 +45,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun configureObservers(){
+        herollainViewModel.getHerollainList().observe(viewLifecycleOwner, this::onHerollainsLoaded)
+        herollainViewModel.requestHerollainList()
+    }
 
-        //TODO Crear observers Home
+    private fun onHerollainsLoaded(herollainsList : List<HerollainBo>){
+        herollainsAdapter.submitList(herollainsList)
     }
 
 }
