@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 class HerollainViewModel : ViewModel(){
 
     private val herollainListLiveData : MutableLiveData<List<HerollainBo>> = MutableLiveData()
+    private val herollainListAuxLiveData : MutableLiveData<List<HerollainBo>> = MutableLiveData()
 
     fun getHerollainList() : LiveData<List<HerollainBo>>{
         return herollainListLiveData
@@ -27,6 +28,12 @@ class HerollainViewModel : ViewModel(){
 //        }
     }
 
+    fun insertHerollainListOnBBDD(){
+        viewModelScope.launch(Dispatchers.IO){
+            herollainListLiveData.value?.let { HerollainLocalRepository.insertHerollainList(it) }
+        }
+    }
+
 
     ///// API ////////////////////////////////////////////////////////////////////////////////////
     private fun requestHerollainListApi() {
@@ -34,5 +41,6 @@ class HerollainViewModel : ViewModel(){
             herollainListLiveData.postValue(HerollainRemoteRepository.getHerollainList())
         }
     }
+
 
 }
