@@ -4,13 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.diusframi.data.entities.dbo.AppearanceDbo
-import com.example.diusframi.data.entities.dbo.BiographyDbo
-import com.example.diusframi.data.entities.dbo.HerollainsDbo
-import com.example.diusframi.data.entities.dbo.PowerStatsDbo
+import com.example.diusframi.data.entities.dbo.*
 import com.example.diusframi.data.local.dao.HerollainsDao
 
-@Database(entities = [HerollainsDbo::class, PowerStatsDbo::class, AppearanceDbo::class, BiographyDbo::class], version = 1)
+@Database(entities = [HerollainDbo::class, PowerStatsDbo::class, AppearanceDbo::class, BiographyDbo::class, ImageDbo::class], version = 1)
 
 abstract class AppDatabase : RoomDatabase() {
 

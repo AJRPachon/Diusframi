@@ -4,8 +4,8 @@ import androidx.annotation.Nullable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "herollains")
-data class HerollainsDbo(
+@Entity(tableName = "herollain")
+data class HerollainDbo(
 
     @PrimaryKey(autoGenerate = true) val id: Int,
     @Nullable val name: String,
