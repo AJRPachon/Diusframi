@@ -49,6 +49,7 @@ class HerollainAdapter(val listener : HerollainCallBack.HerollainDetailClickList
                         .load(R.drawable.ic__isfavourite)
                         .error(R.drawable.ic__isnofavourite)
                         .into(binding.homeRowImgIsFavourite)
+                    binding.homeRowImgIsFavourite.visibility = View.VISIBLE
                 } else {
                     binding.homeRowImgIsFavourite.visibility = View.GONE
                 }
