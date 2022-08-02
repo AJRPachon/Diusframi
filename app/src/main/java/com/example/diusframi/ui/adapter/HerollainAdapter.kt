@@ -1,6 +1,8 @@
 package com.example.diusframi.ui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -10,7 +12,7 @@ import com.example.diusframi.R
 import com.example.diusframi.data.entities.bo.HerollainBo
 import com.example.diusframi.databinding.HomeHerollainsRowBinding
 
-class HerollainAdapter : ListAdapter<HerollainBo, HerollainAdapter.HerollainViewHolder>(HerollainCallBack()) {
+class HerollainAdapter(val listener : HerollainCallBack.HerollainDetailClickListener) : ListAdapter<HerollainBo, HerollainAdapter.HerollainViewHolder>(HerollainCallBack()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HerollainViewHolder =
         HerollainViewHolder(HomeHerollainsRowBinding.inflate(
@@ -48,10 +50,11 @@ class HerollainAdapter : ListAdapter<HerollainBo, HerollainAdapter.HerollainView
                         .error(R.drawable.ic__isnofavourite)
                         .into(binding.homeRowImgIsFavourite)
                 } else {
-                    Glide.with(itemView.context)
-                        .load(R.drawable.ic__isnofavourite)
-                        .error(R.drawable.ic__isnofavourite)
-                        .into(binding.homeRowImgIsFavourite)
+                    binding.homeRowImgIsFavourite.visibility = View.GONE
+                }
+
+                binding.homeRowContainer.setOnClickListener {
+                    herollainBo.id?.let { id -> listener.onHerollainClicked(id) }
                 }
             }
     }
@@ -67,4 +70,8 @@ class HerollainCallBack : DiffUtil.ItemCallback<HerollainBo>() {
         return oldItem == newItem
     }
 
+
+    interface HerollainDetailClickListener {
+        fun onHerollainClicked(herollainId : Int)
+    }
 }

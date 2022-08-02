@@ -10,6 +10,7 @@
         android:layout_margin="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/home_row__container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="10dp">
@@ -31,7 +32,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center_vertical"
                 android:text="@string/name"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/home_row__img__herollain_profile_pic"
                 app:layout_constraintEnd_toStartOf="@+id/home_row__img__is_favourite"
@@ -45,7 +46,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/intelligence"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/home_row__img__herollain_profile_pic" />
@@ -57,7 +58,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_intelligence"
                 app:layout_constraintTop_toBottomOf="@id/home_row__img__herollain_profile_pic" />
@@ -69,7 +70,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/strength"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_intelligence" />
@@ -81,7 +82,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_strength"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_intelligence" />
@@ -93,7 +94,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/speed"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_strength" />
@@ -105,7 +106,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_speed"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_strength" />
@@ -117,7 +118,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/durability"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
                 app:layout_constraintTop_toBottomOf="@id/home_row__img__herollain_profile_pic" />
@@ -129,7 +130,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_durability"
                 app:layout_constraintTop_toBottomOf="@id/home_row__img__herollain_profile_pic" />
@@ -141,7 +142,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/power"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_durability" />
@@ -153,7 +154,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_power"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_durability" />
@@ -165,7 +166,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/combat"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_power" />
@@ -177,7 +178,7 @@
                 android:layout_margin="10dp"
                 android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
-                android:textSize="@dimen/dp14"
+                android:textSize="@dimen/dp12"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_combat"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_power" />

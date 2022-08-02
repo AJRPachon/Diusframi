@@ -6,17 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.diusframi.data.entities.bo.HerollainBo
 import com.example.diusframi.databinding.FragmentHomeBinding
 import com.example.diusframi.ui.adapter.HerollainAdapter
+import com.example.diusframi.ui.adapter.HerollainCallBack
 import com.example.diusframi.ui.viewmodel.HerollainViewModel
 
-class HomeFragment : Fragment() {
+class HerollainFragment : Fragment() {
 
-    private val herollainViewModel : HerollainViewModel by viewModels()
-    private val herollainsAdapter by lazy {
-        HerollainAdapter()
+    private val viewModel : HerollainViewModel by viewModels()
+    private val adapter by lazy {
+        HerollainAdapter(
+            object : HerollainCallBack.HerollainDetailClickListener{
+                override fun onHerollainClicked(herollainId: Int) {
+                    val action = HerollainFragmentDirections.actionHomeFragmentToHerollainDetailFragment(herollainId)
+                    findNavController().navigate(action)
+                }
+            }
+        )
     }
 
     private var binding : FragmentHomeBinding? = null
@@ -36,7 +45,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun configureBindings(){
-        binding?.homeListHerollainsList?.adapter = herollainsAdapter
+        binding?.homeListHerollainsList?.adapter = adapter
         binding?.homeListHerollainsList?.layoutManager = LinearLayoutManager(
             requireActivity().applicationContext,
             LinearLayoutManager.VERTICAL,
@@ -45,13 +54,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun configureObservers(){
-        herollainViewModel.getHerollainList().observe(viewLifecycleOwner, this::onHerollainsLoaded)
-        herollainViewModel.requestHerollainList()
+        viewModel.getHerollainList().observe(viewLifecycleOwner, this::onHerollainsLoaded)
+        viewModel.getHerollainDataList()
     }
 
     private fun onHerollainsLoaded(herollainsList : List<HerollainBo>){
-        herollainsAdapter.submitList(herollainsList)
-        herollainViewModel.insertHerollainListOnBBDD()
+        adapter.submitList(herollainsList)
     }
 
 }
