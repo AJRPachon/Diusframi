@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="dp5">5sp</dimen>
+    <dimen name="dp10">10sp</dimen>
     <dimen name="dp12">12sp</dimen>
+    <dimen name="dp18">18sp</dimen>
     <dimen name="dp20">20sp</dimen>
+    <dimen name="dp28">28sp</dimen>
+    <dimen name="herollain_detail_text">14sp</dimen>
 </resources>

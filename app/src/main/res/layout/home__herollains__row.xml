@@ -7,13 +7,16 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp">
+        app:cardCornerRadius="@dimen/dp10"
+        android:layout_marginStart="@dimen/dp10"
+        android:layout_marginEnd="@dimen/dp10"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/home_row__container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="10dp">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/home_row__img__herollain_profile_pic"
@@ -28,185 +31,184 @@
             <TextView
                 android:id="@+id/home_row__lbl__herollain_name_value"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp10"
                 android:gravity="center_vertical"
                 android:text="@string/name"
-                android:textSize="@dimen/dp12"
+                android:textSize="@dimen/dp18"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/home_row__img__herollain_profile_pic"
-                app:layout_constraintEnd_toStartOf="@+id/home_row__img__is_favourite"
-                app:layout_constraintStart_toEndOf="@id/home_row__img__herollain_profile_pic"
-                app:layout_constraintTop_toTopOf="@+id/home_row__img__herollain_profile_pic" />
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/home_row__img__herollain_profile_pic"
+                app:layout_constraintTop_toBottomOf="@+id/home_row__img__herollain_profile_pic"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_intelligence"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
                 android:text="@string/intelligence"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/home_row__img__herollain_profile_pic" />
+                app:layout_constraintEnd_toStartOf="@+id/home_row__lbl__herollain_intelligence_value"
+                app:layout_constraintBottom_toBottomOf="@id/home_row__lbl__herollain_intelligence_value"
+                app:layout_constraintTop_toTopOf="@id/home_row__lbl__herollain_intelligence_value"/>
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_intelligence_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_intelligence"
-                app:layout_constraintTop_toBottomOf="@id/home_row__img__herollain_profile_pic" />
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/home_row__lbl__herollain_strength_value"
+                app:layout_constraintEnd_toEndOf="@+id/home_row__lbl__herollain_strength_value"
+                app:layout_constraintTop_toTopOf="@+id/home_row__view__powerstats_separator" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_strength"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
                 android:text="@string/strength"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_intelligence" />
+                app:layout_constraintStart_toStartOf="@id/home_row__lbl__herollain_intelligence"
+                app:layout_constraintTop_toTopOf="@+id/home_row__lbl__herollain_strength_value" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_strength_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
                 android:text="@string/powerstats_default_value"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_strength"
-                app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_intelligence" />
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/home_row__view__powerstats_separator"
+                app:layout_constraintEnd_toStartOf="@+id/home_row__view__powerstats_separator"
+                app:layout_constraintTop_toTopOf="@+id/home_row__view__powerstats_separator" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
                 android:text="@string/speed"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_strength" />
+                app:layout_constraintBottom_toBottomOf="@+id/home_row__lbl__herollain_speed_value"
+                app:layout_constraintStart_toStartOf="@id/home_row__lbl__herollain_strength"
+                app:layout_constraintTop_toTopOf="@+id/home_row__lbl__herollain_speed_value" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_speed_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_speed"
-                app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_strength" />
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/home_row__view__powerstats_separator"
+                app:layout_constraintEnd_toEndOf="@+id/home_row__lbl__herollain_strength_value"
+                app:layout_constraintTop_toBottomOf="@+id/home_row__lbl__herollain_strength_value" />
+
+            <View
+                android:id="@+id/home_row__view__powerstats_separator"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="30dp"
+                android:background="@color/cardview_dark_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toEndOf="@id/home_row__img__herollain_profile_pic"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_durability"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="10dp"
                 android:text="@string/durability"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
-                app:layout_constraintTop_toBottomOf="@id/home_row__img__herollain_profile_pic" />
+                app:layout_constraintBottom_toTopOf="@+id/home_row__lbl__herollain_power"
+                app:layout_constraintStart_toEndOf="@+id/home_row__view__powerstats_separator"
+                app:layout_constraintTop_toTopOf="@+id/home_row__view__powerstats_separator" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_durability_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginStart="@dimen/dp10"
                 android:text="@string/powerstats_default_value"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_durability"
-                app:layout_constraintTop_toBottomOf="@id/home_row__img__herollain_profile_pic" />
+                app:layout_constraintTop_toTopOf="@id/home_row__lbl__herollain_durability" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_power"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
                 android:text="@string/power"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
-                app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_durability" />
+                app:layout_constraintBottom_toBottomOf="@+id/home_row__view__powerstats_separator"
+                app:layout_constraintStart_toStartOf="@id/home_row__lbl__herollain_durability"
+                app:layout_constraintTop_toTopOf="@+id/home_row__view__powerstats_separator" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_power_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_power"
-                app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_durability" />
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/home_row__lbl__herollain_durability_value"
+                app:layout_constraintTop_toTopOf="@id/home_row__lbl__herollain_power" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_combat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
                 android:text="@string/combat"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
+                app:layout_constraintBottom_toBottomOf="@+id/home_row__view__powerstats_separator"
+                app:layout_constraintStart_toStartOf="@id/home_row__lbl__herollain_power"
                 app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_power" />
 
             <TextView
                 android:id="@+id/home_row__lbl__herollain_combat_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginTop="12dp"
                 android:text="@string/powerstats_default_value"
                 android:textSize="@dimen/dp12"
                 android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_combat"
-                app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_power" />
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@id/home_row__lbl__herollain_power_value"
+                app:layout_constraintTop_toTopOf="@id/home_row__lbl__herollain_combat" />
 
             <ImageView
                 android:id="@+id/home_row__img__is_favourite"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
                 android:layout_margin="10dp"
                 android:layout_marginEnd="16dp"
+                android:contentDescription="@string/is_favourite_icon"
                 android:src="@drawable/ic__isnofavourite"
-                app:layout_constraintBottom_toBottomOf="@+id/home_row__img__herollain_profile_pic"
+                app:layout_constraintBottom_toBottomOf="@id/home_row__view__powerstats_separator"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/home_row__img__herollain_profile_pic"
-                android:contentDescription="@string/is_favourite_icon" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/home_row__guide__powerstats_helper"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5"/>
+                app:layout_constraintStart_toEndOf="@+id/home_row__lbl__herollain_power_value"
+                app:layout_constraintTop_toTopOf="@+id/home_row__img__herollain_profile_pic" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class ImageDbo(
 
     @PrimaryKey(autoGenerate = true) val id: Int,
-    @Nullable val herollainId: Int, //There could be a image withouth a herollain
+    @Nullable val herollainId: Int?, //There could be a image withouth a herollain
     @Nullable val xs: String?,
     @Nullable val sm: String?,
     @Nullable val md: String?,
