@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragment.HomeFragment">
+    tools:context=".ui.fragment.HerollainFragment">
 
     <EditText
         android:id="@+id/home__input__search_bar"

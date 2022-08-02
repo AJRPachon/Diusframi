@@ -44,4 +44,15 @@ object HerollainLocalRepository {
 
         database.herollainsDao().insertHerollains(herollainListDbo, appearanceList, biographyList, powerStatList, imageList)
     }
+
+    fun getHerollain(id: Int): HerollainBo {
+        return herollainDao.getHerollain(id).toBo()
+    }
+
+
+    ///////// UPDATE /////////////////////////////////////////////////////////////////////////////
+
+    fun setHerollainFavorite(id: Int) {
+        herollainDao.setHerollainFavorite(id)
+    }
 }

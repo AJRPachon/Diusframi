@@ -16,21 +16,25 @@ class HerollainViewModel : ViewModel(){
     private val herollainListAuxLiveData : MutableLiveData<List<HerollainBo>> = MutableLiveData()
 
     fun getHerollainList() : LiveData<List<HerollainBo>>{
+        loadHerollainList()
         return herollainListLiveData
     }
 
-    fun requestHerollainList() {
-
+    fun getHerollainDataList() : LiveData<List<HerollainBo>> {
         requestHerollainListApi()
-
-//        viewModelScope.launch(Dispatchers.IO) {
-//            herollainListLiveData.postValue(HerollainLocalRepository.getHerollainList())
-//        }
+        insertHerollainListOnBBDD()
+        return getHerollainList()
     }
 
-    fun insertHerollainListOnBBDD(){
+    private fun loadHerollainList() {
+        viewModelScope.launch(Dispatchers.IO) {
+            herollainListLiveData.postValue(HerollainLocalRepository.getHerollainList())
+        }
+    }
+
+    private fun insertHerollainListOnBBDD(){
         viewModelScope.launch(Dispatchers.IO){
-            herollainListLiveData.value?.let { HerollainLocalRepository.insertHerollainList(it) }
+            herollainListAuxLiveData.value?.let { HerollainLocalRepository.insertHerollainList(it) }
         }
     }
 
@@ -38,9 +42,10 @@ class HerollainViewModel : ViewModel(){
     ///// API ////////////////////////////////////////////////////////////////////////////////////
     private fun requestHerollainListApi() {
         viewModelScope.launch(Dispatchers.IO) {
-            herollainListLiveData.postValue(HerollainRemoteRepository.getHerollainList())
+            herollainListAuxLiveData.postValue(HerollainRemoteRepository.getHerollainList())
         }
     }
+
 
 
 }

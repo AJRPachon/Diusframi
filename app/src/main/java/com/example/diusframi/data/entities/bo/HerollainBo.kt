@@ -8,5 +8,5 @@ data class HerollainBo (
     val powerstats: PowerStatBo?,
     val appearances: AppearanceBo?,
     val biography: BiographyBo?,
-    val isFavorite: Boolean?
+    var isFavorite: Boolean?
 )

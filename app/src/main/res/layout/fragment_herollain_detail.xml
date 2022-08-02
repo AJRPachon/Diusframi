@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.HerollainDetailFragment">
+
+    <ImageView
+        android:id="@+id/herollain_detail__img__profile_pic"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/herollain_detail_profile_pic" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_name_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/name"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/herollain_detail__img__profile_pic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_intelligence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/intelligence"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_name_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_intelligence_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_intelligence"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_name_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_strength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/strength"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_intelligence" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_strength_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_strength"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_intelligence" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/speed"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_strength" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_speed_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_speed"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_strength" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_durability"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/durability"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_name_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_durability_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_durability"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_name_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_power"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/power"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_durability" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_power_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_power"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_durability" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_combat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/combat"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_power" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_combat_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_combat"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_power" />
+
+    <ImageView
+        android:id="@+id/home_row__img__is_favourite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic__isnofavourite"
+        app:layout_constraintBottom_toBottomOf="@+id/home_row__lbl__herollain_name_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/home_row__lbl__herollain_name_value"
+        android:contentDescription="@string/is_favourite_icon" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/home_row__guide__powerstats_helper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/gender"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_speed" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_gender_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_gender"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_speed" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_race"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/race"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_gender_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_race_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_race"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_gender_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/height"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_race_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_height_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_speed"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_race_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/weight"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_combat" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_weight_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_weight"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_combat" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_eyecolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/eye_color"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_weight_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_eyecolor_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_eyecolor"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_weight_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_haircolor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/hair_color"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__guide__powerstats_helper"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_eyecolor_value" />
+
+    <TextView
+        android:id="@+id/home_row__lbl__herollain_haircolor_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/powerstats_default_value"
+        android:textSize="@dimen/dp20"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/home_row__lbl__herollain_haircolor"
+        app:layout_constraintTop_toBottomOf="@id/home_row__lbl__herollain_eyecolor_value" />
+
+    <ImageView
+        android:id="@+id/home_row__img__back_arrow"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_margin="@dimen/dp20"
+        android:src="@drawable/ic_back_arrow_foreground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/home_row_back_arrow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

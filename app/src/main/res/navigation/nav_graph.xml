@@ -7,7 +7,20 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.diusframi.ui.fragment.HomeFragment"
+        android:name="com.example.diusframi.ui.fragment.HerollainFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_herollainDetailFragment"
+            app:destination="@id/herollainDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/herollainDetailFragment"
+        android:name="com.example.diusframi.ui.fragment.HerollainDetailFragment"
+        android:label="fragment_herollain_detail"
+        tools:layout="@layout/fragment_herollain_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
 </navigation>
