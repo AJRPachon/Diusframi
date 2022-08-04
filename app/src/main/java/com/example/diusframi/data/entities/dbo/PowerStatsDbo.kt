@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "powerstats")
 data class PowerStatsDbo(
 
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey(autoGenerate = false) val id: Int,
     @Nullable val herollainId: Int?, //There could be a power stat withouth a herollain
     @Nullable val intelligence: Int?,
     @Nullable val strength: Int?,

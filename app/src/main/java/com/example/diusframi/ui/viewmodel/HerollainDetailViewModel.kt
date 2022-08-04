@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.diusframi.data.entities.bo.HerollainBo
-import com.example.diusframi.data.local.repository.HerollainLocalRepository
+import com.example.diusframi.data.local.repository.LocalRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -19,13 +19,13 @@ class HerollainDetailViewModel : ViewModel() {
 
     fun requestHerollain(id : Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            herollainLiveData.postValue(HerollainLocalRepository.getHerollain(id))
+            herollainLiveData.postValue(LocalRepository.getHerollain(id))
         }
     }
 
     fun setHerollainFavorite(id: Int) {
         viewModelScope.launch(Dispatchers.IO){
-            HerollainLocalRepository.setHerollainFavorite(id)
+            LocalRepository.updateHerollainFavorite(id)
         }
     }
 

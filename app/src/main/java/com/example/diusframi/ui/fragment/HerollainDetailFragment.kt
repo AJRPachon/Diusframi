@@ -13,6 +13,7 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.diusframi.R
 import com.example.diusframi.data.entities.bo.HerollainBo
+import com.example.diusframi.data.utils.Constants
 import com.example.diusframi.databinding.FragmentHerollainDetailBinding
 import com.example.diusframi.ui.viewmodel.HerollainDetailViewModel
 
@@ -42,7 +43,7 @@ class HerollainDetailFragment : Fragment() {
     }
 
     private fun onHerollainLoaded(herollain: HerollainBo) {
-        binding?.herollainDetailLblHerollainNameValue?.text = herollain.name ?: "None"
+        binding?.herollainDetailLblHerollainNameValue?.text = herollain.name ?: Constants.NONE
 
         binding?.herollainDetailImgProfilePic?.let {
             Glide.with(requireActivity().applicationContext)
@@ -60,13 +61,13 @@ class HerollainDetailFragment : Fragment() {
         binding?.herollainDetailLblHerollainPowerValue?.text = herollain.powerstats?.power.toString()
         binding?.herollainDetailLblHerollainCombatValue?.text = herollain.powerstats?.combat.toString()
 
-        binding?.herollainDetailLblHerollainGenderValue?.text = herollain.appearances?.gender ?: "None"
-        binding?.herollainDetailLblHerollainRaceValue?.text = herollain.appearances?.race ?: "None"
-        binding?.herollainDetailLblHerollainHeightValue?.text = herollain.appearances?.height ?: "None"
-        binding?.herollainDetailLblHerollainWeightValue?.text = herollain.appearances?.weight ?: "None"
-        binding?.herollainDetailLblHerollainEyecolorValue?.text = herollain.appearances?.eyeColor ?: "None"
+        binding?.herollainDetailLblHerollainGenderValue?.text = herollain.appearances?.gender ?: Constants.NONE
+        binding?.herollainDetailLblHerollainRaceValue?.text = herollain.appearances?.race ?: Constants.NONE
+        binding?.herollainDetailLblHerollainHeightValue?.text = herollain.appearances?.height ?: Constants.NONE
+        binding?.herollainDetailLblHerollainWeightValue?.text = herollain.appearances?.weight ?: Constants.NONE
+        binding?.herollainDetailLblHerollainEyecolorValue?.text = herollain.appearances?.eyeColor ?: Constants.NONE
         binding?.herollainDetailLblHerollainHaircolorValue?.text =
-            herollain.appearances?.hairColor ?: "None"
+            herollain.appearances?.hairColor ?: Constants.NONE
 
         binding?.herollainDetailPrgbIntelligence?.progress = herollain.powerstats?.intelligence ?: 0
         binding?.herollainDetailPrgbStrength?.progress = herollain.powerstats?.strength ?: 0
@@ -82,6 +83,7 @@ class HerollainDetailFragment : Fragment() {
                     PorterDuff.Mode.SRC_IN)
             }
         }
+
         binding?.herollainDetailPrgbIntelligence?.let {
             herollain.powerstats?.intelligence?.let { value ->
                 setProgress(
@@ -158,6 +160,17 @@ class HerollainDetailFragment : Fragment() {
         binding?.herollainDetailImgBackArrow?.setOnClickListener {
             findNavController().navigateUp()
         }
+
+        val list = mutableListOf<String>()
+        val separator = ", "
+
+        binding?.herollainDetailLblHerollainFullnameValue?.text = herollain.biography?.fullName
+        binding?.herollainDetailLblHerollainAlteregosValue?.text = herollain.biography?.alterEgos
+        binding?.herollainDetailLblHerollainAliasesValue?.text = list.joinToString(separator)
+        binding?.herollainDetailLblHerollainPlaceofbirthValue?.text = herollain.biography?.placeOfBirth
+        binding?.herollainDetailLblHerollainFirstappearanceValue?.text = herollain.biography?.firstAppearance
+        binding?.herollainDetailLblHerollainPublisherValue?.text = herollain.biography?.publisher
+        binding?.herollainDetailLblHerollainAlignmentValue?.text = herollain.biography?.alignment
 
     }
 
