@@ -12,12 +12,23 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:autofillHints="name"
         android:hint="@string/herollain_name"
         android:inputType="textAutoComplete"
-        android:autofillHints="name" />
+        app:layout_constraintEnd_toStartOf="@+id/home__img__autocomplete_clear_ic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/home__img__autocomplete_clear_ic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/ic_close_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/home__input__search_bar"
+        app:layout_constraintBottom_toBottomOf="@id/home__input__search_bar"
+        android:contentDescription="@string/autocomplete_clear_button" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home__list__herollains_list"

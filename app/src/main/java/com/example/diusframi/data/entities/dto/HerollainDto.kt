@@ -14,8 +14,3 @@ data class HerollainDto(
 
 )
 
-data class HerollainListDto(
-
-    //TODO Corregir esto cuando venga del servicio
-    @SerializedName("id") val id : Int?,
-)

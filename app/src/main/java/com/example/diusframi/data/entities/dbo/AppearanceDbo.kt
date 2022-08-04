@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "appearance")
 data class AppearanceDbo(
 
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey(autoGenerate = false) val id: Int,
     @Nullable val herollainId: Int?, //There could be an appearance withouth a herollain
     @Nullable val gender: String?,
     @Nullable val race: String?,

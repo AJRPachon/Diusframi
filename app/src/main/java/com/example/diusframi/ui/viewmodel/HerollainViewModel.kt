@@ -1,48 +1,34 @@
 package com.example.diusframi.ui.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.diusframi.data.entities.bo.HerollainBo
-import com.example.diusframi.data.local.repository.HerollainLocalRepository
-import com.example.diusframi.data.remote.repository.HerollainRemoteRepository
+import com.example.diusframi.data.remote.repository.GlobalRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HerollainViewModel : ViewModel(){
+class HerollainViewModel(private val repository: GlobalRepository) : ViewModel(){
 
     private val herollainListLiveData : MutableLiveData<List<HerollainBo>> = MutableLiveData()
-    private val herollainListAuxLiveData : MutableLiveData<List<HerollainBo>> = MutableLiveData()
+    private val herollainLiveData : MutableLiveData<HerollainBo> = MutableLiveData()
 
-    fun getHerollainList() : LiveData<List<HerollainBo>>{
-        loadHerollainList()
-        return herollainListLiveData
-    }
+    fun getHerollainLD() = herollainListLiveData
+    fun getHerollain() = herollainLiveData
 
-    fun getHerollainDataList() : LiveData<List<HerollainBo>> {
-        requestHerollainListApi()
-        insertHerollainListOnBBDD()
-        return getHerollainList()
-    }
-
-    private fun loadHerollainList() {
+    fun herollainLiveData() {
         viewModelScope.launch(Dispatchers.IO) {
-            herollainListLiveData.postValue(HerollainLocalRepository.getHerollainList())
+            requestHerollainList()
         }
     }
 
-    private fun insertHerollainListOnBBDD(){
-        viewModelScope.launch(Dispatchers.IO){
-            herollainListAuxLiveData.value?.let { HerollainLocalRepository.insertHerollainList(it) }
+    private suspend fun requestHerollainList(){
+        repository.getHerollainList().collect{
+            herollainListLiveData.postValue(it)
         }
     }
 
-
-    ///// API ////////////////////////////////////////////////////////////////////////////////////
-    private fun requestHerollainListApi() {
+    fun requestHerollain(name : String){
         viewModelScope.launch(Dispatchers.IO) {
-            herollainListAuxLiveData.postValue(HerollainRemoteRepository.getHerollainList())
+            herollainLiveData.postValue(repository.gerHerollain(name))
         }
     }
 

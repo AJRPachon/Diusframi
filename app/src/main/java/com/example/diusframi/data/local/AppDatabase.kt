@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.diusframi.data.entities.dbo.*
+import com.example.diusframi.data.entities.dbo.relations.BiographyWithAliases
 import com.example.diusframi.data.local.dao.HerollainsDao
 
 @Database(entities = [HerollainDbo::class, PowerStatsDbo::class, AppearanceDbo::class, BiographyDbo::class, ImageDbo::class], version = 1)
